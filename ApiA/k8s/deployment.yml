@@ -24,5 +24,5 @@ spec:
           name: api-a-selvin
           env:
             - name: SALUDO
-              value: Hola desde Kubernetes edits
+              value: Hola desde Kubernetes edits 3 veces
       restartPolicy: Always
