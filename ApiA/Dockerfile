@@ -1,11 +1,13 @@
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-focal AS base
 WORKDIR /app
-EXPOSE 80
+#EXPOSE 80
+EXPOSE 9095
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1-focal AS build
 
 WORKDIR /src
 COPY ["ApiA.csproj", "./"]
+RUN dotnet restore "ApiA.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "ApiA.csproj" -c Release -o /app/build
